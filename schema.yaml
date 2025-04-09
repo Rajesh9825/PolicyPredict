@@ -1,1 +1,12 @@
-key: Value
+COLUMNS:
+  age: int64
+  sex: object
+  bmi: float64
+  children: int64
+  smoker: object
+  region: object
+  charges: float64
+
+
+TARGET_COLUMN:
+  name: charges
