@@ -27,3 +27,5 @@ class DataIngestion:
         else:
             logger.info(f"file already exists of size: {get_size(Path(self.config.local_file_path))}")
         
+
+
