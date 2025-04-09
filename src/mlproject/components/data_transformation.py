@@ -17,6 +17,8 @@ class DataTransformation:
     def __init__(self,config: DataTransformationConfig):
         self.config = config
 
+    ## Note: you can add different data transformation techniques such as scalar, PCA, an all.
+    # You can perform all kinds of EDA in ML cycle here before passing this data to the model.
 
     def train_test_splitting(self):
         data = pd.read_csv(self.config.data_path)
@@ -48,12 +50,12 @@ class DataTransformation:
                 "region"
             ]
 
-            # num_pipeline =Pipeline(
-            #     steps=[
-            #         ("imputer",SimpleImputer(strategy="median")),
-            #         #("scaler",StandardScaler())
-            #     ]
-            # )
+            num_pipeline =Pipeline(
+                steps=[
+                    ("imputer",SimpleImputer(strategy="median")),
+                    #("scaler",StandardScaler())
+                ]
+            )
 
             cat_pipeline = Pipeline(
                 steps=[
@@ -65,10 +67,10 @@ class DataTransformation:
             
             preprocessor = ColumnTransformer(
                 [
-                    # ("num_pipeline",num_pipeline,numerical_columns),
-                    ("cat_pipeline",cat_pipeline,categorical_column),
+                    ("num",num_pipeline,numerical_columns),
+                    ("cat",cat_pipeline,categorical_column),
                     
-                ],remainder='passthrough'
+                ] #,remainder='passthrough'
             )
 
             logger.info("Preprocessor object created")
@@ -91,7 +93,7 @@ class DataTransformation:
 
             input_feature_train_df = train_data.drop(columns=[target_column_name],axis=1)
             target_feature_train_df = train_data[target_column_name]
-         
+            #print(input_feature_train_df.head(5))
             input_feature_test_df = test_data.drop(columns=[target_column_name],axis=1)
             target_feature_test_df = test_data[target_column_name]
 
@@ -111,10 +113,14 @@ class DataTransformation:
                 input_feature_test_arr,np.array(target_feature_test_df)
             ]
 
+            print(preprocessor_obj.get_feature_names_out())
 
             #### For dataframe output 
-            transformed_train=pd.DataFrame(train_arr)
-            transformed_test=pd.DataFrame(test_arr)
+            feature_names = preprocessor_obj.get_feature_names_out()
+            columns = list(feature_names) + ["charges"]  # flatten into one list
+
+            transformed_train=pd.DataFrame(train_arr, columns=columns)
+            transformed_test=pd.DataFrame(test_arr,columns=columns)
 
             
             transformed_train.to_csv(os.path.join(self.config.root_dir,"transformed_train.csv"),index= False)
