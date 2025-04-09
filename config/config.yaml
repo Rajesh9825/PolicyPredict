@@ -1,0 +1,7 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_url: harishkumardatalab/medical-insurance-price-prediction
+  local_file_path: artifacts/data_ingestion/Medical_insurance.csv
+  unzip_dir: artifacts/data_ingestion
