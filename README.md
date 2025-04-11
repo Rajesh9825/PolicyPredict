@@ -1,4 +1,4 @@
-# PolicyPredict  — Insurance Policy Price Prediction
+# PolicyPredict  - Insurance Policy Price Prediction
 
 **PolicyPredict** is my product-based machine learning project aimed at predicting insurance charges based on a customer's profile. Though it's a regression problem at its core, I’ve given it a product-like structure with a complete machine learning pipeline, web interface, and deployment setup to simulate a real-world scenario.
 
@@ -6,7 +6,7 @@
 
 Predicting medical insurance costs can help both customers and insurers understand premium estimates better. This project uses demographic and health-related features such as age, BMI, smoking habits, and region to predict insurance charges.
 
-This project goes beyond just model training — it covers everything from data ingestion to model deployment with a full modular ML pipeline, a web interface, and CI/CD deployment to the cloud.
+This project goes beyond just model training - it covers everything from data ingestion to model deployment with a full modular ML pipeline, a web interface, and CI/CD deployment to the cloud.
 
 ---
 
@@ -17,7 +17,7 @@ Before diving into pipeline development, I explored the dataset using **Kaggle N
 - Tested multiple models: `Linear Regression`, `Elastic Net`, `SVM`, `Decision Tree`, `Random Forest`, and `XGBoost`.
 - Performed **feature importance analysis**, and observed that `smoker`, `bmi`, and `age` were the most influential features.
 - Plotted RMSE for each model and found **Decision Tree Regressor** performed the best on the test set.
-- Plotted **actual vs predicted charges** and **residual plots** — confirming the Decision Tree’s better fit.
+- Plotted **actual vs predicted charges** and **residual plots** - confirming the Decision Tree’s better fit.
 
 Based on this exploration, I chose **Decision Tree** as the final model for production.
 
@@ -60,7 +60,7 @@ Based on this exploration, I chose **Decision Tree** as the final model for prod
 - Features:
   - Take user input for predictions
   - Display predicted insurance cost
-  - Optional: Retrain the model with new data through the UI
+  - Optional: Retrain the model with new data.
 
 ---
 
@@ -92,7 +92,7 @@ Based on this exploration, I chose **Decision Tree** as the final model for prod
 - Learned how to use **MLflow for experiment tracking**
 - Gained hands-on experience in **Dockerization** and **AWS deployment**
 - Implemented **CI/CD pipelines** using GitHub Actions
-- Experienced how to structure ML workflows like a **real-world product**
+- Experienced how to structure ML workflows like a real-world product
 
 ---
 
