@@ -1,3 +1,4 @@
-ElasticNet:
-  alpha: 0.5
-  l1_ratio: 0.001
+DecisionTree:
+  max_depth: 20
+  min_samples_split: 2
+  min_samples_leaf: 1

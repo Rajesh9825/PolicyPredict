@@ -30,11 +30,12 @@ class ModelTrainingConfig:
     train_data_path: Path
     test_data_path: Path
     model_name: str
-    alpha: float # params.yaml  
-    l1_ratio: float # params.yaml
+    max_depth: int # params
+    min_samples_split: int
+    min_samples_leaf: int
     target_column: str # Schema.yaml
 
-    
+
 
 @dataclass(frozen=True)
 class ModelEvaluationConfig:

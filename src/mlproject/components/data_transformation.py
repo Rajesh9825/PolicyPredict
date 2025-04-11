@@ -113,7 +113,7 @@ class DataTransformation:
                 input_feature_test_arr,np.array(target_feature_test_df)
             ]
 
-            print(preprocessor_obj.get_feature_names_out())
+            # print(preprocessor_obj.get_feature_names_out())
 
             #### For dataframe output 
             feature_names = preprocessor_obj.get_feature_names_out()
