@@ -21,6 +21,8 @@ Before diving into pipeline development, I explored the dataset using **Kaggle N
 
 Based on this exploration, I chose **Decision Tree** as the final model for production.
 
+Kaggle Notebook : https://www.kaggle.com/code/rajeshgajengi/insurance-price-prediction
+
 ---
 
 ##  Project Workflow
